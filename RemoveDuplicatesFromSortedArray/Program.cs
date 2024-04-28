@@ -15,7 +15,7 @@ namespace RemoveDuplicatesFromSortedArray
 
             foreach (var item in input)
             {
-                var result = RemoveDuplicates(item.Item1);
+                var result = RemoveDuplicates_Solution2(item.Item1);
                 var expectedResult = item.Item2;
 
                 if (expectedResult != result)
@@ -35,7 +35,7 @@ namespace RemoveDuplicatesFromSortedArray
             Console.ReadKey();
         }
 
-        public static int RemoveDuplicates(int[] nums)
+        public static int RemoveDuplicates_Solution1(int[] nums)
         {
             var result = nums.Length;
             var index = 0;
@@ -72,6 +72,34 @@ namespace RemoveDuplicatesFromSortedArray
                 nums[i] = arr[i];
             } 
             #endregion
+
+            return result;
+        }
+
+        public static int RemoveDuplicates_Solution2(int[] nums)
+        {
+            if (nums.Length == 1)
+            {
+                return nums.Length;
+            }
+
+            var result = nums.Length;
+            var index = 0;
+            var current = nums[index];
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (current == nums[i])
+                {
+                    result--;
+                }
+                else
+                {
+                    current = nums[i];
+                    nums[index + 1] = nums[i];
+                    index++;
+                }
+            }
 
             return result;
         }
