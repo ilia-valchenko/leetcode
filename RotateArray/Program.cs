@@ -22,6 +22,16 @@ namespace RotateArray
                 }
             };
 
+            foreach (var testItem in testItems)
+            {
+                Rotate(testItem.OriginalArray, testItem.ShiftValue);
+
+                for (var i = 0; i < testItem.OriginalArray.Length; i++)
+                {
+                    if 
+                }
+            }
+
             Console.WriteLine("All tests are passed.");
             Console.WriteLine("Tap to continue...");
             Console.ReadKey();
@@ -37,8 +47,8 @@ namespace RotateArray
             for (int i = 0; i < nums.Length; i++)
             {
                 var helper = nums[i];
-                var newIndex = i + k <= nums.Length ? i + k : 
-                nums[i] = nums[]
+                var newIndex = i + k <= nums.Length ? i + k : (i + k) % nums.Length;
+                nums[i] = nums[newIndex];
             }
         }
     }
