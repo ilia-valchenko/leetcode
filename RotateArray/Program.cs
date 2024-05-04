@@ -25,14 +25,23 @@ namespace RotateArray
             foreach (var testItem in testItems)
             {
                 Rotate(testItem.OriginalArray, testItem.ShiftValue);
+                var isValid = true;
 
                 for (var i = 0; i < testItem.OriginalArray.Length; i++)
                 {
-                    if 
+                    if (testItem.OriginalArray[i] != testItem.ExpectedResultArray[i])
+                    {
+                        isValid = false;
+
+                        Console.WriteLine("\n\nThe array was rotated in a wrong way. " +
+                            $"\nRotated array: [{ToString(testItem.OriginalArray)}]. " +
+                            $"\nExpected result: [{ToString(testItem.ExpectedResultArray)}].");
+
+                        break;
+                    }
                 }
             }
 
-            Console.WriteLine("All tests are passed.");
             Console.WriteLine("Tap to continue...");
             Console.ReadKey();
         }
@@ -44,12 +53,23 @@ namespace RotateArray
                 return;
             }
 
+            var cloneArray = new int[nums.Length];
+
             for (int i = 0; i < nums.Length; i++)
             {
-                var helper = nums[i];
-                var newIndex = i + k <= nums.Length ? i + k : (i + k) % nums.Length;
-                nums[i] = nums[newIndex];
+                cloneArray[i] = nums[i];
             }
+
+            for (int i = 0; i < cloneArray.Length; i++)
+            {
+                var newIndex = i + k < nums.Length ? i + k : (i + k) % nums.Length;
+                nums[newIndex] = cloneArray[i];
+            }
+        }
+
+        private static string ToString<T>(T[] array)
+        {
+            return string.Join(",", array);
         }
     }
 }
