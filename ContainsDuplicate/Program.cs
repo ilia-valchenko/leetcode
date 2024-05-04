@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
 
-namespace BestTimeToBuyAndSellStock
+namespace ContainsDuplicate
 {
     class Program
     {
@@ -11,24 +11,24 @@ namespace BestTimeToBuyAndSellStock
             {
                 new TestItem
                 {
-                    InputArray = new [] { 7, 1, 5, 3, 6, 4 },
-                    Result = 7
+                    InputArray = new [] { 1,2,3,1 },
+                    Result = true
                 },
                 new TestItem
                 {
-                    InputArray = new [] { 1, 2, 3, 4, 5 },
-                    Result = 4
+                    InputArray = new [] { 1,2,3,4 },
+                    Result = false
                 },
                 new TestItem
                 {
-                    InputArray = new [] { 7, 6, 4, 3, 1 },
-                    Result = 0
+                    InputArray = new [] { 1,1,1,3,3,4,3,2,4,2 },
+                    Result = true
                 }
             };
 
             foreach (var testItem in testItems)
             {
-                var actualResult = MaxProfit(testItem.InputArray);
+                var actualResult = ContainsDuplicate(testItem.InputArray);
 
                 if (actualResult != testItem.Result)
                 {
@@ -40,32 +40,24 @@ namespace BestTimeToBuyAndSellStock
             Console.ReadKey();
         }
 
-        private static int MaxProfit(int[] prices)
+        public static bool ContainsDuplicate(int[] nums)
         {
-            if (prices.Length == 1)
+            if (nums.Length == 1)
             {
-                return 0;
+                return false;
             }
 
-            var profit = 0;
-            var buyPrice = prices[0];
+            var dictionary = new Dictionary<int, int>();
 
-            for (int i = 0; i < prices.Length; i++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                if (buyPrice >= prices[i])
+                if (!dictionary.TryAdd(nums[i], nums[i]))
                 {
-                    buyPrice = prices[i];
-                }
-
-                if (i + 1 != prices.Length && buyPrice < prices[i+1])
-                {
-                    profit = prices[i + 1] - buyPrice;
+                    return true;
                 }
             }
 
-            //var maxPrice = prices.Max();
-
-            return profit;// < maxPrice ? maxPrice : profit;
+            return false;
         }
 
         private static string ToString<T>(T[] array)

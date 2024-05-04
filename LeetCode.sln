@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotateArray", "RotateArray\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EasyCollection", "EasyCollection", "{AA399CEC-12A6-403E-B272-4DAAA5BB2B6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestTimeToBuyAndSellStock", "BestTimeToBuyAndSellStock\BestTimeToBuyAndSellStock.csproj", "{868D7166-DCF4-49EC-85A7-C4FFAD60E336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestTimeToBuyAndSellStock", "BestTimeToBuyAndSellStock\BestTimeToBuyAndSellStock.csproj", "{868D7166-DCF4-49EC-85A7-C4FFAD60E336}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TopInterviewQuestions", "TopInterviewQuestions", "{6FE93356-AC9D-4BA0-A762-9E589980578A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainsDuplicate", "ContainsDuplicate\ContainsDuplicate.csproj", "{E68ABB8A-CE60-4BEE-B9DA-F333E39F9CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,10 @@ Global
 		{868D7166-DCF4-49EC-85A7-C4FFAD60E336}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868D7166-DCF4-49EC-85A7-C4FFAD60E336}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868D7166-DCF4-49EC-85A7-C4FFAD60E336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68ABB8A-CE60-4BEE-B9DA-F333E39F9CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68ABB8A-CE60-4BEE-B9DA-F333E39F9CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68ABB8A-CE60-4BEE-B9DA-F333E39F9CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68ABB8A-CE60-4BEE-B9DA-F333E39F9CCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,7 +44,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A17413AF-7814-418A-94D6-A4A7E40A199F} = {AA399CEC-12A6-403E-B272-4DAAA5BB2B6C}
 		{7DC2C2C5-AF2E-4D59-B815-E74F8BED08BC} = {AA399CEC-12A6-403E-B272-4DAAA5BB2B6C}
+		{AA399CEC-12A6-403E-B272-4DAAA5BB2B6C} = {6FE93356-AC9D-4BA0-A762-9E589980578A}
 		{868D7166-DCF4-49EC-85A7-C4FFAD60E336} = {AA399CEC-12A6-403E-B272-4DAAA5BB2B6C}
+		{E68ABB8A-CE60-4BEE-B9DA-F333E39F9CCA} = {AA399CEC-12A6-403E-B272-4DAAA5BB2B6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {644C0D67-C2C0-40E8-BD12-59F7F3CC2EE9}
