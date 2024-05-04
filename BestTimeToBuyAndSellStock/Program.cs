@@ -57,7 +57,7 @@ namespace BestTimeToBuyAndSellStock
                     buyPrice = prices[i];
                 }
 
-                if (i + 1 != prices.Length && buyPrice > prices[i+1])
+                if (i + 1 != prices.Length && buyPrice < prices[i+1])
                 {
                     profit = prices[i + 1] - buyPrice;
                 }
